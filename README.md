@@ -1,9 +1,15 @@
 # AbleTestLibs
 Able实验室，用于测试新控件、框架、想法等
 
+#Kotlin
+采用Kotlin开发，Studio创建工程时选择Kotlin支持即可，然后添加插件用于自动导入布局文件：
+>apply plugin: 'kotlin-android-extensions'
+
 #Bezier
 二阶贝塞尔View绘制测试
 
 #Bezier3
 三阶贝塞尔View绘制测试
 
+#BezierMagicCircle
+利用三阶贝塞尔绘制滚动的圆圈
