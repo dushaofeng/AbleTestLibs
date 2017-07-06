@@ -8,6 +8,9 @@ Able实验室，用于测试新控件、框架、想法等
 #RadarView
 雷达图，用于多维展示，可以自定义维度
 
+#贝塞尔Path
+https://github.com/GcsSloop/AndroidNote/blob/master/CustomView/Advance/%5B06%5DPath_Bezier.md
+
 #Bezier
 二阶贝塞尔View绘制测试
 

@@ -13,6 +13,7 @@ import android.view.animation.Transformation;
 
 /**
  * Created by Able on 2017/6/30.
+ * 移动中的水滴效果
  */
 
 public class BezierMagicCircle extends View {
@@ -44,7 +45,9 @@ public class BezierMagicCircle extends View {
     private float radius;
     private float c;
     private float blackMagic = 0.551915024494f;
+    //纵向的左和右两个点坐标
     private VPoint p2, p4;
+    //横向的天和地两个点坐标
     private HPoint p1, p3;
 
 
@@ -94,6 +97,7 @@ public class BezierMagicCircle extends View {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         mPath.reset();
+        //画布初始化位置始终在左上角的X=半径,Y=半径处
         canvas.translate(radius, radius);
 
         if (mInterpolatedTime >= 0 && mInterpolatedTime <= 0.2) {
@@ -116,15 +120,20 @@ public class BezierMagicCircle extends View {
         p4.adjustAllX(offset);
 
         mPath.moveTo(p1.x, p1.y);
+        //绘制右下方的四分之一圆
         mPath.cubicTo(p1.right.x, p1.right.y, p2.bottom.x, p2.bottom.y, p2.x, p2.y);
+        //绘制右上方的四分之一圆
         mPath.cubicTo(p2.top.x, p2.top.y, p3.right.x, p3.right.y, p3.x, p3.y);
+        //绘制左上方的四分之一圆
         mPath.cubicTo(p3.left.x, p3.left.y, p4.top.x, p4.top.y, p4.x, p4.y);
+        //绘制左下方的四分之一圆
         mPath.cubicTo(p4.bottom.x, p4.bottom.y, p1.left.x, p1.left.y, p1.x, p1.y);
 
         canvas.drawPath(mPath, mFillCirclePaint);
 
     }
 
+    //当圆是正圆时，四个方向点的坐标
     private void model0() {
         p1.setY(radius);
         p3.setY(-radius);
@@ -235,10 +244,13 @@ public class BezierMagicCircle extends View {
         mPath.reset();
         mInterpolatedTime = 0;
         MoveAnimation move = new MoveAnimation();
-        move.setDuration(1000);
+        move.setDuration(60000);
+        //变化方式，开头和结尾变化慢，中间变化快
         move.setInterpolator(new AccelerateDecelerateInterpolator());
-        //move.setRepeatCount(Animation.INFINITE);
-        //move.setRepeatMode(Animation.REVERSE);
+        //无限循环
+        move.setRepeatCount(Animation.INFINITE);
+        //到达周期结束时反方向回来
+        move.setRepeatMode(Animation.REVERSE);
         startAnimation(move);
     }
 }
