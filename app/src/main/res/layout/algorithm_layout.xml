@@ -8,11 +8,20 @@
         android:id="@+id/bt_maopao"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:onClick="click"
         android:text="冒泡算法"/>
 
-    <TextView
-        android:id="@+id/tv_maopao"
+    <Button
+        android:id="@+id/bt_xuanze"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="用时"/>
+        android:onClick="click"
+        android:text="选择算法"/>
+
+    <Button
+        android:id="@+id/bt_charu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="click"
+        android:text="插入算法"/>
 </LinearLayout>
