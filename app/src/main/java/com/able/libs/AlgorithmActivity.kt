@@ -17,7 +17,7 @@ import kotlin.concurrent.thread
  */
 class AlgorithmActivity : AppCompatActivity() {
     private var ARRAY_COUNT = 1000
-    private val DEBUG: Boolean = true
+    private val DEBUG: Boolean = false
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(algorithm_layout)
@@ -102,16 +102,20 @@ class AlgorithmActivity : AppCompatActivity() {
             dev *= 10
             mod *= 10
         }
-
         val end = System.currentTimeMillis()
         makeLog("After" + sortList.contentToString())
-        runOnUiThread { bt_jishu.text = "" + sortList.size + "个数的" + "基数算法耗时：" + (end - start) / 1000 + "秒" }
         var result = true
         for (i in 0..sortList.size - 2) {
             if (sortList[i] > sortList[i + 1]) {
                 result = false
                 break
             }
+        }
+        if (result) {
+            //排序成功
+            runOnUiThread { bt_jishu.text = "" + sortList.size + "个数的" + "基数算法耗时：" + (end - start) / 1000 + "秒" + (end - start) % 1000 + "毫秒" }
+        } else {
+            runOnUiThread { bt_jishu.text = "" + sortList.size + "个数的" + "基数算法耗时：" + (end - start) / 1000 + "秒，计算失败！" }
         }
         makeLog("排序是否成功： " + result)
     }
@@ -159,7 +163,6 @@ class AlgorithmActivity : AppCompatActivity() {
         }
         val end = System.currentTimeMillis()
         makeLog("After" + sortList.contentToString())
-        runOnUiThread { bt_dui.text = "" + sortList.size + "个数的" + "堆算法耗时：" + (end - start) / 1000 + "秒" }
         var result = true
         for (i in 0..sortList.size - 2) {
             if (sortList[i] > sortList[i + 1]) {
@@ -167,7 +170,12 @@ class AlgorithmActivity : AppCompatActivity() {
                 break
             }
         }
-        makeLog("排序是否成功： " + result)
+        if (result) {
+            //排序成功
+            runOnUiThread { bt_dui.text = "" + sortList.size + "个数的" + "堆算法耗时：" + (end - start) / 1000 + "秒" + (end - start) % 1000 + "毫秒" }
+        } else {
+            runOnUiThread { bt_dui.text = "计算失败！" }
+        }
     }
 
     /*
@@ -212,7 +220,6 @@ class AlgorithmActivity : AppCompatActivity() {
         loopForKuaipai(sortList, 0, sortList.size - 1)
         val end = System.currentTimeMillis()
         makeLog("After" + sortList.contentToString())
-        runOnUiThread { bt_kuaipai.text = "" + sortList.size + "个数的" + "快速算法耗时：" + (end - start) / 1000 + "秒" }
         var result = true
         for (i in 0..sortList.size - 2) {
             if (sortList[i] > sortList[i + 1]) {
@@ -220,11 +227,18 @@ class AlgorithmActivity : AppCompatActivity() {
                 break
             }
         }
-        makeLog("排序是否成功： " + result)
+        if (result) {
+            //排序成功
+            runOnUiThread { bt_kuaipai.text = "" + sortList.size + "个数的" + "快速排序耗时：" + (end - start) / 1000 + "秒" + (end - start) % 1000 + "毫秒" }
+        } else {
+            runOnUiThread { bt_kuaipai.text = "计算失败！" }
+        }
     }
 
     private fun getSortList(): IntArray {
-        ARRAY_COUNT = et_count.text.toString().toInt()
+        if (et_count.text.toString().isNotEmpty()) {
+            ARRAY_COUNT = et_count.text.toString().toInt()
+        }
         if (ARRAY_COUNT < 0) {
             Toast.makeText(this, "数字太小", Toast.LENGTH_SHORT).show()
         }
@@ -263,7 +277,6 @@ class AlgorithmActivity : AppCompatActivity() {
         }
         val end = System.currentTimeMillis()
         makeLog("After" + sortList.contentToString())
-        runOnUiThread { bt_maopao.text = "" + sortList.size + "个数的" + "冒泡算法耗时：" + (end - start) / 1000 + "秒" }
         var result = true
         for (i in 0..sortList.size - 2) {
             if (sortList[i] > sortList[i + 1]) {
@@ -271,7 +284,12 @@ class AlgorithmActivity : AppCompatActivity() {
                 break
             }
         }
-        makeLog("排序是否成功： " + result)
+        if (result) {
+            //排序成功
+            runOnUiThread { bt_maopao.text = "" + sortList.size + "个数的" + "冒泡算法耗时：" + (end - start) / 1000 + "秒" + (end - start) % 1000 + "毫秒" }
+        } else {
+            runOnUiThread { bt_maopao.text = "计算失败！" }
+        }
     }
 
     /*
@@ -293,7 +311,6 @@ class AlgorithmActivity : AppCompatActivity() {
         }
         val end = System.currentTimeMillis()
         makeLog("After" + sortList.contentToString())
-        runOnUiThread { bt_charu.text = "" + sortList.size + "个数的" + "插入算法耗时：" + (end - start) / 1000 + "秒" }
         var result = true
         for (i in 0..sortList.size - 2) {
             if (sortList[i] > sortList[i + 1]) {
@@ -301,7 +318,12 @@ class AlgorithmActivity : AppCompatActivity() {
                 break
             }
         }
-        makeLog("排序是否成功： " + result)
+        if (result) {
+            //排序成功
+            runOnUiThread { bt_charu.text = "" + sortList.size + "个数的" + "插入算法耗时：" + (end - start) / 1000 + "秒" + (end - start) % 1000 + "毫秒" }
+        } else {
+            runOnUiThread { bt_charu.text = "计算失败！" }
+        }
     }
 
     /*
@@ -324,7 +346,6 @@ class AlgorithmActivity : AppCompatActivity() {
         }
         val end = System.currentTimeMillis()
         makeLog("After" + sortList.contentToString())
-        runOnUiThread { bt_xuanze.text = "" + sortList.size + "个数的" + "选择算法耗时：" + (end - start) / 1000 + "秒" }
         var result = true
         for (i in 0..sortList.size - 2) {
             if (sortList[i] > sortList[i + 1]) {
@@ -332,7 +353,12 @@ class AlgorithmActivity : AppCompatActivity() {
                 break
             }
         }
-        makeLog("排序是否成功： " + result)
+        if (result) {
+            //排序成功
+            runOnUiThread { bt_xuanze.text = "" + sortList.size + "个数的" + "选择算法耗时：" + (end - start) / 1000 + "秒" + (end - start) % 1000 + "毫秒" }
+        } else {
+            runOnUiThread { bt_xuanze.text = "计算失败！" }
+        }
     }
 
     /*
@@ -367,7 +393,6 @@ class AlgorithmActivity : AppCompatActivity() {
         }
         val end = System.currentTimeMillis()
         makeLog("After" + sortList.contentToString())
-        runOnUiThread { bt_xier.text = "" + sortList.size + "个数的" + "希尔算法耗时：" + (end - start) / 1000 + "秒" }
         var result = true
         for (i in 0..sortList.size - 2) {
             if (sortList[i] > sortList[i + 1]) {
@@ -375,7 +400,12 @@ class AlgorithmActivity : AppCompatActivity() {
                 break
             }
         }
-        makeLog("排序是否成功： " + result)
+        if (result) {
+            //排序成功
+            runOnUiThread { bt_xier.text = "" + sortList.size + "个数的" + "希尔算法耗时：" + (end - start) / 1000 + "秒" + (end - start) % 1000 + "毫秒" }
+        } else {
+            runOnUiThread { bt_xier.text = "计算失败！" }
+        }
     }
 
     fun makeLog(message: String, tag: String = "ssss") {
