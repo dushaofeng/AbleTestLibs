@@ -4,6 +4,11 @@
               android:layout_height="match_parent"
               android:orientation="vertical">
 
+    <EditText
+        android:id="@+id/et_count"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
     <Button
         android:id="@+id/bt_maopao"
         android:layout_width="match_parent"
@@ -24,4 +29,32 @@
         android:layout_height="wrap_content"
         android:onClick="click"
         android:text="插入算法"/>
+
+    <Button
+        android:id="@+id/bt_xier"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="click"
+        android:text="希尔排序"/>
+
+    <Button
+        android:id="@+id/bt_kuaipai"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="click"
+        android:text="快速排序"/>
+
+    <Button
+        android:id="@+id/bt_dui"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="click"
+        android:text="堆排序"/>
+
+    <Button
+        android:id="@+id/bt_jishu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="click"
+        android:text="基数排序"/>
 </LinearLayout>
