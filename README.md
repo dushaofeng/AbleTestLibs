@@ -19,3 +19,6 @@ https://github.com/GcsSloop/AndroidNote/blob/master/CustomView/Advance/%5B06%5DP
 
 #BezierMagicCircle
 利用三阶贝塞尔绘制滚动的圆圈
+
+#AlgorithmActivity
+测试各种算法的效率

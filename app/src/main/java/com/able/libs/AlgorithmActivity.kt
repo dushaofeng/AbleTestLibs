@@ -16,8 +16,8 @@ import kotlin.concurrent.thread
  * 测试各种算法的效率
  */
 class AlgorithmActivity : AppCompatActivity() {
-    private var ARRAY_COUNT = 100000
-    private val DEBUG: Boolean = false
+    private var ARRAY_COUNT = 1000
+    private val DEBUG: Boolean = true
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(algorithm_layout)
@@ -152,7 +152,9 @@ class AlgorithmActivity : AppCompatActivity() {
 
         }
         for (i in len - 1 downTo 1) {
+            //依次拿出堆顶元素放在数列最后
             swapByIndex(sortList, 0, i)
+            //对剩余的0-->i的堆重拍，即可找到剩余数列中的最大值
             loopForDui(sortList, 0, i)
         }
         val end = System.currentTimeMillis()
@@ -186,6 +188,7 @@ class AlgorithmActivity : AppCompatActivity() {
             while (list[right] >= mid && left < right) {
                 right--
             }
+            //此时遇到了 list[left]>mid>list[right]，需要交换两侧
             swapByIndex(list, left, right)
         }
         if (list[left] > list[end]) {
@@ -279,9 +282,10 @@ class AlgorithmActivity : AppCompatActivity() {
         val start = System.currentTimeMillis()
         makeLog("Before" + sortList.contentToString())
         //Todo
-        for (i in 1..(sortList.size - 1)) {
+        for (i in 1 until sortList.size) {
             for (j in i downTo 1) {
                 if (sortList[j] > sortList[j - 1]) {
+                    //已经找到当前元素要插入的位置
                     break
                 }
                 swapByIndex(sortList, j - 1, j)
@@ -346,10 +350,11 @@ class AlgorithmActivity : AppCompatActivity() {
             gap = gap * 3 + 1
         }
         while (gap > 0) {
-            for (i in gap..sortList.size - 1) {
+            for (i in gap until sortList.size) {
                 var temp = sortList[i]
                 var j = i - gap
                 while (j >= 0) {
+                    //将以temp为元素起点，以gap为步进长度构成的list进行插入运算
                     if (sortList[j] <= temp) {
                         break
                     }
