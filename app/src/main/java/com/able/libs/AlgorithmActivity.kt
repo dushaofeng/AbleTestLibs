@@ -17,7 +17,7 @@ import kotlin.concurrent.thread
  */
 class AlgorithmActivity : AppCompatActivity() {
     private var ARRAY_COUNT = 1000
-    private val DEBUG: Boolean = false
+    private val DEBUG: Boolean = true
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(algorithm_layout)
