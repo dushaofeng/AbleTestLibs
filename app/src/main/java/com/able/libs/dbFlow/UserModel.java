@@ -14,12 +14,16 @@ public class UserModel extends BaseModel {
     //自增ID
     @Column
     @PrimaryKey(autoincrement = true)
-    public Long id;
+    public Long id = Long.valueOf(0);
     @Column
     public String name;
     @Column
     public int sex;
     @Column
     public int age;
+
+    public String toString() {
+        return "id:" + id + ",name:" + name + ",sex:" + sex + ",age:" + age;
+    }
 }
 

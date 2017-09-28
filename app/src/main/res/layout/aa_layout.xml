@@ -15,4 +15,22 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="GetDb"/>
+
+    <Button
+        android:id="@+id/delDb"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="DeleteDb"/>
+
+    <Button
+        android:id="@+id/updatelDb"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="UpdateDb"/>
+
+    <Button
+        android:id="@+id/insertManyDb"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="批量插入"/>
 </LinearLayout>
