@@ -22,3 +22,6 @@ https://github.com/GcsSloop/AndroidNote/blob/master/CustomView/Advance/%5B06%5DP
 
 #AlgorithmActivity
 测试各种算法的效率
+
+#SenseyTestActivity
+添加Sensey的测试Activity，用于测试[sensey](https://github.com/nisrulz/sensey)的lib

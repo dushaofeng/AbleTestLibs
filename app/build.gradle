@@ -40,4 +40,7 @@ dependencies {
     annotationProcessor "com.github.Raizlabs.DBFlow:dbflow-processor:${dbflow_version}"
     compile "com.github.Raizlabs.DBFlow:dbflow-core:${dbflow_version}"
     compile "com.github.Raizlabs.DBFlow:dbflow:${dbflow_version}"
+
+    //添加Sensey的手势、传感器测试库
+    compile 'com.github.nisrulz:sensey:1.7.0'
 }
