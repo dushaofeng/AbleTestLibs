@@ -36,6 +36,7 @@ import org.androidannotations.annotations.ViewsById;
 
 import java.text.DecimalFormat;
 import java.util.List;
+import java.util.concurrent.Delayed;
 
 
 /**
@@ -56,7 +57,7 @@ public class SenseyTestActivity extends AppCompatActivity
     @AfterViews
     void afterViews() {
         // Init Sensey
-        Sensey.getInstance().init(this);
+        Sensey.getInstance().init(this,Sensey.SAMPLING_PERIOD_GAME);
 
         for (SwitchCompat swt : swtList) {
             swt.setChecked(false);
@@ -65,7 +66,7 @@ public class SenseyTestActivity extends AppCompatActivity
 
     @Click(R.id.btn_touchevent)
     void onClick() {
-        //                startActivity(new Intent(SenseyTestActivity.this, TouchActivity.class));
+        SenseyTouchActivity_.intent(this).start();
     }
 
 
@@ -210,11 +211,16 @@ public class SenseyTestActivity extends AppCompatActivity
     }
 
     @UiThread
-    private void setResultTextView(final String text, final boolean realtime) {
+    public void setResultTextView(final String text, final boolean realtime) {
         txtViewResult.setText(text);
         if (!realtime) {
-            txtViewResult.setText(getString(R.string.results_show_here));
+            resetTextview();
         }
+    }
+
+    @UiThread(delay = 3000)
+    public void resetTextview() {
+        txtViewResult.setText(getString(R.string.results_show_here));
     }
 
     @Override

@@ -5,7 +5,7 @@ import android.support.v7.app.AppCompatActivity
 import com.able.libs.R.layout.activity_main
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity() {
+class KotlinAndBezierTestActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -25,3 +25,12 @@ https://github.com/GcsSloop/AndroidNote/blob/master/CustomView/Advance/%5B06%5DP
 
 #SenseyTestActivity
 添加Sensey的测试Activity，用于测试[sensey](https://github.com/nisrulz/sensey)的lib
+##初始化方法
+Sensey.getInstance().init(this,Sensey.SAMPLING_PERIOD_GAME);
+第二个参数为传感器的灵敏度，默认为Normal，可选值为:
+public static final int SAMPLING_PERIOD_FASTEST = 0;
+public static final int SAMPLING_PERIOD_GAME = 1;
+public static final int SAMPLING_PERIOD_NORMAL = 3;
+public static final int SAMPLING_PERIOD_UI = 2;
+##传感器使用
+###摇晃传感器(startShakeDetection)

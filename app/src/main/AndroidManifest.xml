@@ -10,31 +10,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
-        </activity>
-        <activity android:name=".AlgorithmActivity">
-            <!--<intent-filter>-->
-            <!--<action android:name="android.intent.action.MAIN"/>-->
-
-            <!--<category android:name="android.intent.category.LAUNCHER"/>-->
-            <!--</intent-filter>-->
-        </activity>
-        <activity android:name=".AATestActivity_">
+        <activity android:name=".MainActivity_">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <activity android:name=".KotlinAndBezierTestActivity"/>
+        <activity android:name=".AlgorithmActivity"/>
+        <activity android:name=".AATestActivity_"/>
         <activity
             android:name=".SenseyTestActivity_"
-            android:theme="@style/AppThemeForSensy">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
-        </activity>
+            android:theme="@style/AppThemeForSensy"/>
+        <activity
+            android:name=".SenseyTouchActivity_"
+            android:theme="@style/AppThemeForSensy"/>
     </application>
 
 </manifest>

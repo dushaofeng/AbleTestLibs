@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <Button
+        android:id="@+id/gotoKotlinAndBezier"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Kotlin与贝塞尔测试"/>
+
+    <Button
+        android:id="@+id/gotoDbflowAndAA"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="AA和Dbflow测试"/>
+
+    <Button
+        android:id="@+id/gotoAlgorithm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="算法测试"/>
+
+
+    <Button
+        android:id="@+id/gotoSensey"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sensey测试"/>
+</LinearLayout>
