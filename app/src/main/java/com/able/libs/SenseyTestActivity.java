@@ -1,6 +1,11 @@
 package com.able.libs;
 
+import android.content.Context;
 import android.content.Intent;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
@@ -53,15 +58,80 @@ public class SenseyTestActivity extends AppCompatActivity
     List<SwitchCompat> swtList;
     @ViewById(R.id.textView_result)
     TextView txtViewResult;
+    private float c;
+    private float d;
+    private float e;
+    private long f;
+    private long g;
+    private boolean h;
+    private float max;
+    private boolean incre = false;
 
     @AfterViews
     void afterViews() {
         // Init Sensey
-        Sensey.getInstance().init(this,Sensey.SAMPLING_PERIOD_GAME);
+        Sensey.getInstance().init(this, Sensey.SAMPLING_PERIOD_GAME);
 
         for (SwitchCompat swt : swtList) {
             swt.setChecked(false);
         }
+        this.e = 9.80665F;
+        this.g = System.currentTimeMillis();
+        this.h = false;
+        this.c = 10;
+        this.f = 2000;
+        SensorManager sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
+        Sensor accelerometerSensor = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+        sensorManager.registerListener(new SensorEventListener() {
+            @Override
+            public void onSensorChanged(SensorEvent sensorEvent) {
+                if (sensorEvent.sensor.getType() == Sensor.TYPE_ACCELEROMETER) {
+                    float var2 = sensorEvent.values[0];
+                    float var3 = sensorEvent.values[1];
+                    float sensorEvent1 = sensorEvent.values[2];
+                    //                    Log.d("ssss", "onSensorChanged x:" + var2+",y:"+var3+",z:"+sensorEvent1);
+                    float var4 = e;
+                    e = (float) Math.sqrt((double) (var2 * var2 + var3 * var3 + sensorEvent1 * sensorEvent1));
+                    //                    Log.d("ssss", "onSensorChanged e:" + e);
+                    //sensorEvent1是当前综合加速与默认加速度之差
+                    sensorEvent1 = e - var4;
+                    //d是一个不断累加的过程
+                    d = d * 0.9F + sensorEvent1;
+                    if (d<1){
+                        return;
+                    }
+
+                    if ((d - max) > 0) {
+                        //递增
+                        if (!incre) {
+                            Log.d("ssss", "onSensorChanged ============================d:" + max);
+                        }
+                        incre = true;
+                        max = d;
+                    } else {
+                        if (incre) {
+                            Log.d("ssss", "onSensorChanged ============================d:" + max);
+                        }
+                        incre = false;
+                        max = d;
+                    }
+                    if (d > c) {
+                        g = System.currentTimeMillis();
+                        h = true;
+                    } else {
+                        if (System.currentTimeMillis() - g > f && h) {
+                            h = false;
+                        }
+
+                    }
+                }
+            }
+
+            @Override
+            public void onAccuracyChanged(Sensor sensor, int accuracy) {
+
+            }
+        }, accelerometerSensor, SensorManager.SENSOR_DELAY_GAME);
     }
 
     @Click(R.id.btn_touchevent)
@@ -76,7 +146,7 @@ public class SenseyTestActivity extends AppCompatActivity
         switch (swt.getId()) {
             case R.id.Switch1:
                 if (isChecked) {
-                    Sensey.getInstance().startShakeDetection(10, 2000, this);
+                    Sensey.getInstance().startShakeDetection(10, 1000, this);
                 } else {
                     Sensey.getInstance().stopShakeDetection(this);
                 }
