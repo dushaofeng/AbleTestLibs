@@ -43,4 +43,6 @@ dependencies {
 
     //添加Sensey的手势、传感器测试库
     compile 'com.github.nisrulz:sensey:1.7.0'
+
+    compile 'uk.co.chrisjenx:calligraphy:2.3.0'
 }

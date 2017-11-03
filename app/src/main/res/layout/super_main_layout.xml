@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              tools:ignore="MissingPrefix"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
               android:orientation="vertical">
@@ -28,4 +30,44 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Sensey测试"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="CustomViewWithTypefaceSupport"/>
+
+    <TextView
+        fontPath="fonts/gtw.ttf"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="gtw字体"/>
+
+    <TextView
+        fontPath="fonts/Oswald-Stencbab.ttf"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Oswald-Stencbab字体"/>
+
+    <TextView
+        fontPath="fonts/Roboto-Bold.ttf"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Roboto-Bold字体"/>
+
+    <TextView
+        fontPath="fonts/RobotoCondensed-Regular.ttf"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="RobotoCondensed-Regular字体"/>
+
+    <TextView
+        fontPath="fonts/Roboto-ThinItalic.ttf"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Roboto-ThinItalic字体"/>
+    <TextView
+        fontPath="fonts/micro-font.ttf"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="micro-font字体"/>
 </LinearLayout>
