@@ -12,7 +12,7 @@
     <style name="AppTheme.Widget"/>
 
     <style name="AppTheme.Widget.TextView" parent="android:Widget.Holo.Light.TextView">
-        <item name="fontPath">fonts/Roboto-ThinItalic.ttf</item>
+        <item name="fontPath">fonts/micro-font.ttf</item>
     </style>
 
     <style name="AppThemeForSensy" parent="AppTheme.Base"/>
