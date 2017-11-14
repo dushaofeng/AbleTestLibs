@@ -43,13 +43,18 @@ public class MpAndroidChartsTestActivity extends AppCompatActivity implements On
     @AfterViews
     void onAfterViews() {
         mTfLight = Typeface.createFromAsset(getAssets(), "fonts/RobotoCondensed-Regular.ttf");
+
         mChart.setOnChartValueSelectedListener(this);
+        //关闭柱状图上部的阴影，这个阴影很丑，绘制阴影会降低绘图性能
         mChart.setDrawBarShadow(false);
+        //每个柱形代表的数值位置，是显示在柱形顶部线上面，还是顶部线下面
         mChart.setDrawValueAboveBar(true);
         mChart.getDescription().setEnabled(false);
+        //可以显示最多的数值
         mChart.setMaxVisibleValueCount(60);
         mChart.setPinchZoom(false);
         mChart.setDrawGridBackground(false);
+        //X轴标尺
         IAxisValueFormatter xAxisFormatter = new DayAxisValueFormatter(mChart);
 
         XAxis xAxis = mChart.getXAxis();
@@ -60,6 +65,7 @@ public class MpAndroidChartsTestActivity extends AppCompatActivity implements On
         xAxis.setLabelCount(7);
         xAxis.setValueFormatter(xAxisFormatter);
 
+        //Y轴标尺
         IAxisValueFormatter custom = new MyAxisValueFormatter();
 
         YAxis leftAxis = mChart.getAxisLeft();
@@ -92,6 +98,7 @@ public class MpAndroidChartsTestActivity extends AppCompatActivity implements On
         // l.setCustom(ColorTemplate.VORDIPLOM_COLORS, new String[] { "abc",
         // "def", "ghj", "ikl", "mno" });
 
+        //选择某个柱时顶部弹出的数值格式，可以有布局
         XYMarkerView mv = new XYMarkerView(this, xAxisFormatter);
         mv.setChartView(mChart); // For bounds control
         mChart.setMarker(mv); // Set the marker to the chart
@@ -128,8 +135,7 @@ public class MpAndroidChartsTestActivity extends AppCompatActivity implements On
 
         BarDataSet set1;
 
-        if (mChart.getData() != null &&
-                mChart.getData().getDataSetCount() > 0) {
+        if (mChart.getData() != null && mChart.getData().getDataSetCount() > 0) {
             set1 = (BarDataSet) mChart.getData().getDataSetByIndex(0);
             set1.setValues(yVals1);
             mChart.getData().notifyDataChanged();
