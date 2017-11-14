@@ -6,41 +6,45 @@
               android:orientation="vertical"
               tools:ignore="MissingPrefix">
 
-    <Button
-        android:id="@+id/gotoKotlinAndBezier"
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Kotlin与贝塞尔测试"/>
+        android:text="CustomViewWithTypefaceSupport"
+        android:textAppearance="@style/TextAppearance.FontPath"/>
 
-    <Button
-        android:id="@+id/gotoDbflowAndAA"
+    <TextView
+        fontPath="fonts/gtw.ttf"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="AA和Dbflow测试"/>
+        android:text="gtw字体"/>
 
-    <Button
-        android:id="@+id/gotoAlgorithm"
+    <TextView
+        fontPath="fonts/Oswald-Stencbab.ttf"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="算法测试"/>
+        android:text="Oswald-Stencbab字体"/>
 
-
-    <Button
-        android:id="@+id/gotoSensey"
+    <TextView
+        fontPath="fonts/Roboto-Bold.ttf"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Sensey测试"/>
+        android:text="Roboto-Bold字体"/>
 
-    <Button
-        android:id="@+id/gotoFontTest"
+    <TextView
+        fontPath="fonts/RobotoCondensed-Regular.ttf"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="字体测试"/>
+        android:text="RobotoCondensed-Regular字体"/>
 
-    <Button
-        android:id="@+id/gotoMpAndroid"
+    <TextView
+        fontPath="fonts/Roboto-ThinItalic.ttf"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="MpAndroid测试"/>
+        android:text="Roboto-ThinItalic字体"/>
 
+    <TextView
+        fontPath=""
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="micro-font字体"/>
 </LinearLayout>

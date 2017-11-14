@@ -45,4 +45,7 @@ dependencies {
     compile 'com.github.nisrulz:sensey:1.7.0'
 
     compile 'uk.co.chrisjenx:calligraphy:2.3.0'
+
+    //mpandroid 图形库
+    compile 'com.github.PhilJay:MPAndroidChart:v3.0.2'
 }

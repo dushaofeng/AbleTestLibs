@@ -38,4 +38,14 @@ public class MainActivity extends AppCompatActivity {
     void gotoSensey() {
         SenseyTestActivity_.intent(this).start();
     }
+
+    @Click
+    void gotoFontTest() {
+        FontTestActivity_.intent(this).start();
+    }
+
+    @Click
+    void gotoMpAndroid() {
+        MpAndroidChartsTestActivity_.intent(this).start();
+    }
 }

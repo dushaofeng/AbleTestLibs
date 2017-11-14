@@ -17,15 +17,17 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".KotlinAndBezierTestActivity"/>
-        <activity android:name=".AlgorithmActivity"/>
-        <activity android:name=".AATestActivity_"/>
         <activity
             android:name=".SenseyTestActivity_"
             android:theme="@style/AppThemeForSensy"/>
         <activity
             android:name=".SenseyTouchActivity_"
             android:theme="@style/AppThemeForSensy"/>
+        <activity android:name=".KotlinAndBezierTestActivity"/>
+        <activity android:name=".AlgorithmActivity"/>
+        <activity android:name=".AATestActivity_"/>
+        <activity android:name=".FontTestActivity_"/>
+        <activity android:name=".MpAndroidChartsTestActivity_"/>
     </application>
 
 </manifest>
