@@ -47,3 +47,6 @@ public static final int SAMPLING_PERIOD_UI = 2;
 ####第三个参数为回掉函数，无需解释
 
 
+#EasyPermissionTestActivity
+
+权限测试

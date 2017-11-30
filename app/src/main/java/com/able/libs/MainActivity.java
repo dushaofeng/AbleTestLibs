@@ -44,4 +44,9 @@ public class MainActivity extends AppCompatActivity {
     void gotoMpAndroid() {
         MpAndroidChartsTestActivity_.intent(this).start();
     }
+
+    @Click
+    void gotoPermissionTest() {
+        EasyPermissionTestActivity_.intent(this).start();
+    }
 }
