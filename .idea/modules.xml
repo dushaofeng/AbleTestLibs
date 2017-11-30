@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/AbleTestLibs.iml" filepath="$PROJECT_DIR$/AbleTestLibs.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://D:\Project\AbleTestLibs\app\app.iml" filepath="D:\Project\AbleTestLibs\app\app.iml" />
     </modules>
   </component>
 </project>
