@@ -4,6 +4,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 
+import com.able.libs.touchEventFlowTest.TouchEventFlowActivity_;
+
 import org.androidannotations.annotations.Click;
 import org.androidannotations.annotations.EActivity;
 
@@ -48,5 +50,10 @@ public class MainActivity extends AppCompatActivity {
     @Click
     void gotoPermissionTest() {
         EasyPermissionTestActivity_.intent(this).start();
+    }
+
+    @Click
+    void gotoTouchEventTest() {
+        TouchEventFlowActivity_.intent(this).start();
     }
 }

@@ -38,6 +38,7 @@
         <activity android:name=".FontTestActivity_"/>
         <activity android:name=".MpAndroidChartsTestActivity_"/>
         <activity android:name=".EasyPermissionTestActivity_"/>
+        <activity android:name=".touchEventFlowTest.TouchEventFlowActivity_"/>
     </application>
 
 </manifest>
