@@ -90,8 +90,8 @@ class AlgorithmActivity : AppCompatActivity() {
                 counter[bucket]?.add(sortList[j])
             }
             var pos = 0
-            for (i in 0..9) {
-                counter[i]?.forEach {
+            for (j in 0..9) {
+                counter[j]?.forEach {
                     //依次将counter中的值放入列表中
                     //第一次经过进--出的操作就对个位数字进行了排序
                     //第二次经过进--出的操作就对十位进行了排序
