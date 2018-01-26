@@ -14,15 +14,20 @@ import org.androidannotations.annotations.EActivity;
 
 @EActivity(R.layout.touch_event_test)
 public class TouchEventFlowActivity extends AppCompatActivity {
+    public static final String TAG = "TouchEventTag";
+
     @Override
-    public boolean dispatchTouchEvent(MotionEvent ev) {
-        Log.d(this.getClass().getName(), "dispatchTouchEvent:" + ev.getAction());
-        return super.dispatchTouchEvent(ev);
+    public boolean dispatchTouchEvent(MotionEvent event) {
+        boolean returnResult = super.dispatchTouchEvent(event);
+        Log.d(TouchEventFlowActivity.TAG, "Activity--dispatchTouchEvent:" + event.getAction() + ",returnResult:" + returnResult);
+        return returnResult;
     }
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        Log.d(this.getClass().getName(), "onTouchEvent+" + event.getAction());
-        return super.onTouchEvent(event);
+        boolean returnResult = super.onTouchEvent(event);
+//        returnResult = true;
+        Log.d(TouchEventFlowActivity.TAG, "Activity--onTouchEvent:" + event.getAction() + ",returnResult:" + returnResult);
+        return returnResult;
     }
 }
