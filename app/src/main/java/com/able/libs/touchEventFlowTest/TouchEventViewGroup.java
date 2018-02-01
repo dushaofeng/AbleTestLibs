@@ -28,6 +28,7 @@ public class TouchEventViewGroup extends LinearLayout {
     @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {
         boolean returnResult = super.dispatchTouchEvent(ev);
+//        returnResult = false;
         Log.d(TouchEventFlowActivity.TAG, "ViewGroup--dispatchTouchEvent:" + ev.getAction() + ",returnResult:" + returnResult);
         return returnResult;
     }
@@ -35,7 +36,7 @@ public class TouchEventViewGroup extends LinearLayout {
     @Override
     public boolean onInterceptTouchEvent(MotionEvent ev) {
         boolean returnResult = super.onInterceptTouchEvent(ev);
-        returnResult = false;
+//        returnResult = false;
         Log.d(TouchEventFlowActivity.TAG, "ViewGroup--onInterceptTouchEvent:" + ev.getAction() + ",returnResult:" + returnResult);
         return returnResult;
     }

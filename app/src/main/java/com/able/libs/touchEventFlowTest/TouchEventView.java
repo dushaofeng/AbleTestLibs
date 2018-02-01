@@ -26,7 +26,7 @@ public class TouchEventView extends android.support.v7.widget.AppCompatButton {
     @Override
     public boolean dispatchTouchEvent(MotionEvent event) {
         boolean returnResult = super.dispatchTouchEvent(event);
-        returnResult = true;
+//        returnResult = false;
         Log.d(TouchEventFlowActivity.TAG, "View--dispatchTouchEvent:" + event.getAction() + ",returnResult:" + returnResult);
         return returnResult;
     }
