@@ -56,4 +56,9 @@ public class MainActivity extends AppCompatActivity {
     void gotoTouchEventTest() {
         TouchEventFlowActivity_.intent(this).start();
     }
+
+    @Click
+    void gotoPickerViewTest() {
+        TouchEventFlowActivity_.intent(this).start();
+    }
 }

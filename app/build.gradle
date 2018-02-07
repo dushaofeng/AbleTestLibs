@@ -51,4 +51,7 @@ dependencies {
 
     //动态权限管理
     compile 'pub.devrel:easypermissions:1.0.1'
+
+    //二级选择器控件测试
+    compile 'com.contrarywind:Android-PickerView:3.2.7'
 }
