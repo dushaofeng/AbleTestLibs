@@ -59,6 +59,6 @@ public class MainActivity extends AppCompatActivity {
 
     @Click
     void gotoPickerViewTest() {
-        TouchEventFlowActivity_.intent(this).start();
+        PickerViewTestActivity_.intent(this).start();
     }
 }
