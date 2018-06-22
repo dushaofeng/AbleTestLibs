@@ -60,4 +60,9 @@
         android:layout_height="wrap_content"
         android:text="PickerView测试"/>
 
+    <Button
+        android:id="@+id/gotoRecyclerViewAdapterTest"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="RecyclerAdapter测试"/>
 </LinearLayout>

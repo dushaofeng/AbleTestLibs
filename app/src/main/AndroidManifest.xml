@@ -40,6 +40,7 @@
         <activity android:name=".EasyPermissionTestActivity_"/>
         <activity android:name=".touchEventFlowTest.TouchEventFlowActivity_"/>
         <activity android:name=".PickerViewTestActivity_"/>
+        <activity android:name=".RecyclerAdapterTestActivity_"/>
     </application>
 
 </manifest>

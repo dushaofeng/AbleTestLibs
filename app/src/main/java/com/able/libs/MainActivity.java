@@ -1,6 +1,5 @@
 package com.able.libs;
 
-import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 
@@ -8,8 +7,6 @@ import com.able.libs.touchEventFlowTest.TouchEventFlowActivity_;
 
 import org.androidannotations.annotations.Click;
 import org.androidannotations.annotations.EActivity;
-
-import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 /**
  * Created by Able on 2017/10/15.
@@ -60,5 +57,10 @@ public class MainActivity extends AppCompatActivity {
     @Click
     void gotoPickerViewTest() {
         PickerViewTestActivity_.intent(this).start();
+    }
+
+    @Click
+    void gotoRecyclerViewAdapterTest() {
+        RecyclerAdapterTestActivity_.intent(this).start();
     }
 }
